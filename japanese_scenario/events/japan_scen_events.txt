@@ -1,0 +1,229 @@
+namespace = japan_scen
+
+country_event = {
+	id = japan_scen.1
+	title = "japan_scen.1.t"
+	desc = "japan_scen.1.d"
+	picture = SHIP_SAILING_eventPicture
+	
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = player_shogunate_choice
+	}
+	
+	option = {
+		name = "japan_scen.1.a"		
+		
+		add_government_reform = shogunate
+		
+		capital_scope = {
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+		}
+		add_prestige = 25
+		capital_scope = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+
+		if = {
+			limit = {
+				NOT = { num_of_cities = 2 }
+			}
+			random_neighbor_country = {
+				limit = {
+					NOT = { num_of_cities = 3 }
+					culture_group = japanese_g
+                    NOT = { has_reform = shogunate }
+					ai = yes
+				}
+				root = { inherit = prev }
+			}
+		}
+		if = {
+			limit = {
+				NOT = { num_of_cities = 3 }
+			}
+			random_neighbor_country = {
+				limit = { 
+					NOT = { num_of_cities = 2 }
+					culture_group = japanese_g
+                    NOT = { has_reform = shogunate }
+					ai = yes
+				}
+				root = { inherit = prev }
+			}
+		}
+
+		every_country = {
+			limit = {
+				capital_scope = { continent = new_world }
+				culture_group = japanese_g
+                NOT = { has_reform = shogunate }
+			}
+			root = { vassalize = prev }
+			add_opinion = { who = root modifier = elected_shogun }
+			country_event = { id = japan_scen.2 }
+		}
+	}
+	
+	option = {
+		name = "japan_scen.1.b"
+		
+        if = {
+            limit = {
+                any_country = {
+                    ai = no
+                    capital_scope = { continent = new_world }
+                    culture_group = japanese_g
+                    NOT = { has_country_flag = player_shogunate_choice }
+                }
+            }
+            random_country = {
+                limit = {
+                    ai = no
+                    capital_scope = { continent = new_world }
+                    culture_group = japanese_g
+                    NOT = { has_country_flag = player_shogunate_choice }
+                }
+                country_event = { id = japan_scen.1 }
+            }            
+        }
+        else
+        {
+            random_country = {
+                limit = {
+                    capital_scope = { continent = new_world }
+                    culture_group = japanese_g
+                }
+                country_event = { id = japan_scen.3 }
+            }
+        }
+    }
+}
+
+country_event = {
+	id = japan_scen.2
+	title = "japan_scen.2.t"
+	desc = "japan_scen.2.d"
+	picture = SHIP_SAILING_eventPicture
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "japan_scen.2.a"
+        add_government_reform = daimyo
+		tooltip = {
+			from = {
+				add_government_reform = shogunate
+			}
+			every_country = {
+				limit = {
+					capital_scope = { continent = new_world }
+					culture_group = japanese_g
+                    NOT = { has_reform = shogunate }
+				}
+				from = { vassalize = prev }
+				add_opinion = { who = from modifier = elected_shogun }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = japan_scen.3
+	title = "japan_scen.3.t"
+	desc = "japan_scen.3.d"
+	picture = SHIP_SAILING_eventPicture
+	
+	is_triggered_only = yes	
+	
+	option = {
+		name = "japan_scen.3.a"
+		
+		add_government_reform = shogunate
+		overlord = { free_vassal = root }
+		
+		capital_scope = {
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root
+			infantry = root			
+		}
+		add_prestige = 25
+		capital_scope = {
+			add_base_tax = 2
+			add_base_production = 2
+			add_base_manpower = 2
+		}
+		if = {
+			limit = {
+				NOT = { num_of_cities = 2 }
+			}
+			random_neighbor_country = {
+				limit = {
+					NOT = { num_of_cities = 3 }
+					culture_group = japanese_g
+                    NOT = { has_reform = shogunate }
+					ai = yes
+				}
+				root = { inherit = prev }
+				if = {
+					limit = {
+						prev = { NOT = { num_of_cities = 2 } }
+					}
+					random_neighbor_country = {
+						limit = {
+							NOT = { num_of_cities = 2 }
+							culture_group = japanese_g
+                            NOT = { has_reform = shogunate }
+							ai = yes
+						}
+						root = { inherit = prev }
+					}
+				}
+			}
+		}
+		else_if = {
+			limit = {
+				NOT = { num_of_cities = 3 }
+			}
+			random_neighbor_country = {
+				limit = { 
+					NOT = { num_of_cities = 2 }
+					culture_group = japanese_g
+                    NOT = { has_reform = shogunate }
+					ai = yes
+				}
+				root = { inherit = prev }
+			}
+		}
+
+		every_country = {
+			limit = {
+				capital_scope = { continent = new_world }
+				culture_group = japanese_g
+                NOT = { has_reform = shogunate }
+			}
+			root = { vassalize = prev }
+			add_opinion = { who = root modifier = elected_shogun }
+			country_event = { id = japan_scen.2 }
+		}
+	}
+}

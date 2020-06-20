@@ -1,0 +1,12 @@
+﻿l_english:
+ japan_scen.1.t:0 "A new shogun"
+ japan_scen.1.d:0 "Since our forefathers colonized these new lands we have been loyal to our shogun, but it seems the shogun has no more interest in the new lands or has lost the knowledge of our existence. Therefore we must elect a new shogun to rule the land. [ROOT.GetName] has been elected as our new shogun and will rule the land."
+ japan_scen.1.a:0 "We will rule this land."
+ japan_scen.1.b:0 "Let someone else be shogun."
+ japan_scen.2.t:0 "A new shogun"
+ japan_scen.2.d:0 "Since our forefathers colonized these new lands we have been loyal to our shogun, but it seems the shogun has no more interest in the new lands or has lost the knowledge of our existence. Therefore we must elect a new shogun to rule the land. [FROM.GetName] has been elected as our new shogun and will rule the land."
+ japan_scen.2.a:0 "All hail the shogun!"
+ japan_scen.3.t:0 "A new shogun"
+ japan_scen.3.d:0 "Since our forefathers colonized these new lands we have been loyal to our shogun, but it seems the shogun has no more interest in the new lands or has lost the knowledge of our existence. Therefore we must elect a new shogun to rule the land. [ROOT.GetName] has been elected as our new shogun and will rule the land."
+ japan_scen.3.a:0 "We will rule this land."
+ elected_shogun:0 "Elected shogun"
