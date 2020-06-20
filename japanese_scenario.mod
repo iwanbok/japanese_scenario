@@ -4,5 +4,5 @@ tags={
 	"Map"
 }
 name="Japanese RNW Scenario"
-supported_version="1.30.1"
-archive="mod/japanese_scenario.zip"
+supported_version="1.30.2"
+path="mod/japanese_scenario"
