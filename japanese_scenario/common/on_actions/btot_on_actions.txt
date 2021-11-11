@@ -1,0 +1,45 @@
+#When adding effects directly in on_actions always consider if it would be best to do so through a scripted effect. on_actions with a lot of script in them are harder to get an overview of.
+
+# country
+on_startup = {
+    if = {
+        limit = {
+            tag = PAP
+        }       
+        if = {
+            limit = {
+                any_country = {
+                    limit = {
+                        ai = no
+                        capital_scope = { continent = new_world }
+                        culture_group = japanese_g
+                    }
+                }
+            }
+            random_country = {
+                limit = {
+                    ai = no
+                    capital_scope = { continent = new_world }
+                    culture_group = japanese_g
+                }
+                country_event = { id = japan_scen.1 }
+            }
+        }
+        else_if = {
+			limit = {
+				any_country = {
+					limit = {
+						capital_scope = { continent = new_world }
+                        culture_group = japanese_g
+				}
+			}
+            random_country = {
+                limit = {
+                    capital_scope = { continent = new_world }
+                    culture_group = japanese_g
+                }
+                country_event = { id = japan_scen.3 }
+            }
+        }
+    }
+}
