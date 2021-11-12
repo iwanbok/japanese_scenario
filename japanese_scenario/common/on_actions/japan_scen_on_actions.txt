@@ -1,19 +1,16 @@
 #When adding effects directly in on_actions always consider if it would be best to do so through a scripted effect. on_actions with a lot of script in them are harder to get an overview of.
 
-# country
 on_startup = {
     if = {
         limit = {
             tag = PAP
-        }       
+        }
         if = {
             limit = {
                 any_country = {
-                    limit = {
-                        ai = no
-                        capital_scope = { continent = new_world }
-                        culture_group = japanese_g
-                    }
+                    ai = no
+                    capital_scope = { continent = new_world }
+                    culture_group = japanese_g
                 }
             }
             random_country = {
@@ -26,13 +23,12 @@ on_startup = {
             }
         }
         else_if = {
-			limit = {
-				any_country = {
-					limit = {
-						capital_scope = { continent = new_world }
-                        culture_group = japanese_g
-				}
-			}
+            limit = {
+                any_country = {
+                    capital_scope = { continent = new_world }
+                    culture_group = japanese_g
+                }
+            }
             random_country = {
                 limit = {
                     capital_scope = { continent = new_world }
@@ -41,5 +37,11 @@ on_startup = {
                 country_event = { id = japan_scen.3 }
             }
         }
+    }
+}
+
+on_province_owner_change = {
+    events = {
+        japan_scen.4
     }
 }

@@ -1,0 +1,4 @@
+japan_scen_new_world_kyoto = {
+    development_cost = -0.1
+    prestige = 0.5
+}

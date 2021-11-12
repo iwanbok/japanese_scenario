@@ -4,5 +4,5 @@ tags={
 	"Map"
 }
 name="Japanese RNW Scenario"
-supported_version="1.30.2"
+supported_version="1.32.0"
 remote_file_id="573179159"
