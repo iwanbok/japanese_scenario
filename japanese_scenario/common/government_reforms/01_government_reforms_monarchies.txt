@@ -233,6 +233,7 @@ shogunate = {
 	allow_vassal_war = yes
 	allow_vassal_alliance = yes
 	lock_level_when_selected = yes
+	can_change_primary_culture = no
 
 	modifiers = {
 		diplomats = 1
@@ -252,6 +253,7 @@ daimyo = {
 		NOT = { has_country_flag = formed_japan_flag }
 		overlord = { has_reform = shogunate }
 	}
+	replacement_on_independence_war = indep_daimyo
 	legacy_equivalent = daimyo_legacy
 	fixed_rank = 1
 	maintain_dynasty = yes
@@ -316,7 +318,6 @@ indep_daimyo = {
 		locked_government_type = yes
 	}
 }
-
 
 celestial_empire = {
 	icon = "celestial_empire"
